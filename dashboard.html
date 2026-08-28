@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>کارنامه‌های من</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+
+<body class="dashboard-page">
+
+
+    <main id="dashboard-view">
+
+        <div class="dashboard-container">
+
+
+            <!-- =================================================
+                 HEADER
+                 ================================================= -->
+
+            <header class="dashboard-header">
+
+
+                <div class="welcome-area">
+
+
+                    <div class="dashboard-icon">
+                        📊
+                    </div>
+
+
+                    <div>
+
+                        <h1 id="welcome">
+                            خوش آمدید
+                        </h1>
+
+                        <p>
+                            کارنامه‌های شما
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+                <button
+                    type="button"
+                    id="logout-button"
+                >
+                    خروج
+                </button>
+
+
+            </header>
+
+
+
+            <!-- =================================================
+                 ERROR
+                 ================================================= -->
+
+            <p
+                id="dashboard-error"
+                class="error-message"
+                hidden
+            ></p>
+
+
+
+            <!-- =================================================
+                 TITLE
+                 ================================================= -->
+
+            <div class="page-title">
+
+                <h2>
+                    کارنامه‌های من
+                </h2>
+
+                <p>
+                    برای مشاهده هر کارنامه روی کارت مربوطه کلیک کنید.
+                </p>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 CARDS
+                 ================================================= -->
+
+            <div
+                id="cards-container"
+                class="cards-container"
+            >
+
+                <div class="loading">
+
+                    <div class="loading-spinner"></div>
+
+                    <span>
+                        در حال بارگذاری کارنامه‌ها...
+                    </span>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </main>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script src="config.js"></script>
+
+    <script src="dashboard.js"></script>
+
+</body>
+
+</html>
