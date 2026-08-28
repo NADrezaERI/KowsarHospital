@@ -1083,3 +1083,128 @@ a {
     }
 
 }
+
+
+/* ============================================================
+   LOGO
+   ============================================================ */
+
+.logo-container {
+
+    width: 150px;
+
+    height: 110px;
+
+    margin:
+        0
+        auto
+        22px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #ffffff;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 10px 25px
+        rgba(15, 23, 42, 0.08);
+
+    border:
+        1px solid
+        #e5eaf0;
+}
+
+
+.site-logo {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: contain;
+
+    display: block;
+}
+
+
+/* ============================================================
+   DASHBOARD LOGO
+   ============================================================ */
+
+.dashboard-logo-container {
+
+    width: 300px;
+
+    height: 58px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #ffffff;
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        #e5eaf0;
+
+    box-shadow:
+        0 5px 15px
+        rgba(15, 23, 42, 0.07);
+}
+
+
+.dashboard-logo {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: contain;
+
+    display: block;
+}
+
+
+/* ============================================================
+   MOBILE LOGO
+   ============================================================ */
+
+@media (max-width: 700px) {
+
+    .logo-container {
+
+        width: 95px;
+
+        height: 95px;
+
+        border-radius: 17px;
+
+        margin-bottom: 19px;
+    }
+
+
+    .dashboard-logo-container {
+
+        width: 50px;
+
+        height: 50px;
+
+        border-radius: 12px;
+    }
+
+}

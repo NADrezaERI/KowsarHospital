@@ -2,6 +2,7 @@
 <html lang="fa" dir="rtl">
 
 <head>
+
     <meta charset="UTF-8">
 
     <meta
@@ -12,29 +13,48 @@
     <title>سامانه کارنامه</title>
 
     <link rel="stylesheet" href="styles.css">
+
 </head>
 
 
 <body class="login-page">
 
+
     <main id="login-view">
+
 
         <div class="login-container">
 
-            <div class="login-icon">
-                📊
+
+            <!-- LOGO -->
+
+            <div class="logo-container">
+
+                <img
+                    src="logo.png"
+                    alt="لوگوی سامانه"
+                    class="site-logo"
+                >
+
             </div>
+
+
+            <!-- TITLE -->
 
             <h1>
                 سامانه کارنامه
             </h1>
+
 
             <p class="login-subtitle">
                 برای مشاهده کارنامه‌های خود وارد شوید.
             </p>
 
 
+            <!-- LOGIN FORM -->
+
             <form id="login-form">
+
 
                 <div class="form-group">
 
@@ -88,18 +108,30 @@
                     hidden
                 ></p>
 
+
             </form>
 
+
         </div>
+
 
     </main>
 
 
+    <!-- SUPABASE -->
+
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
+    <!-- CONFIG -->
 
     <script src="config.js"></script>
 
+
+    <!-- LOGIN JAVASCRIPT -->
+
     <script src="app.js"></script>
+
 
 </body>
 
