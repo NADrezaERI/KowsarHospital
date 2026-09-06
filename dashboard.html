@@ -2,7 +2,6 @@
 <html lang="fa" dir="rtl">
 
 <head>
-
     <meta charset="UTF-8">
 
     <meta
@@ -13,102 +12,102 @@
     <title>کارنامه‌های من</title>
 
     <link rel="stylesheet" href="styles.css">
-
 </head>
 
 
 <body class="dashboard-page">
 
-
     <main id="dashboard-view">
-
 
         <div class="dashboard-container">
 
 
-            <!-- =================================================
+            <!-- =====================================================
                  HEADER
-                 ================================================= -->
+                 ===================================================== -->
 
             <header class="dashboard-header">
 
-
                 <div class="welcome-area">
 
-
-                    <!-- LOGO -->
-
                     <div class="dashboard-logo-container">
-
                         <img
                             src="logo2.png"
                             alt="لوگوی سامانه"
                             class="dashboard-logo"
                         >
-
                     </div>
 
-
-                    <div>
-
-                        <h1 id="welcome">
-                            خوش آمدید
-                        </h1>
-
-                        <p>
-                            کارنامه‌های شما
-                        </p>
-
+                    <div class="welcome-text">
+                        <h1 id="welcome">خوش آمدید</h1>
+                        <p>سامانه مشاهده کارنامه</p>
                     </div>
-
 
                 </div>
 
 
-                <button
-                    type="button"
-                    id="logout-button"
-                >
-                    خروج
-                </button>
+                <div class="header-actions">
 
+                    <button
+                        type="button"
+                        id="change-password-button"
+                        class="secondary-button"
+                    >
+                        <span class="button-icon">🔑</span>
+                        <span>تغییر رمز عبور</span>
+                    </button>
+
+
+                    <button
+                        type="button"
+                        id="logout-button"
+                        class="logout-button"
+                    >
+                        <span class="button-icon">↪</span>
+                        <span>خروج</span>
+                    </button>
+
+                </div>
 
             </header>
 
 
-            <!-- =================================================
-                 ERROR
-                 ================================================= -->
+
+            <!-- =====================================================
+                 DASHBOARD ERROR
+                 ===================================================== -->
 
             <p
                 id="dashboard-error"
-                class="error-message"
+                class="error-message dashboard-error"
                 hidden
             ></p>
 
 
-            <!-- =================================================
+
+            <!-- =====================================================
                  PAGE TITLE
-                 ================================================= -->
+                 ===================================================== -->
 
-            <div class="page-title">
+            <section class="page-title">
 
-                <h2>
-                    کارنامه‌های من
-                </h2>
+                <div>
+                    <h2>کارنامه‌های من</h2>
 
-                <p>
-                    برای مشاهده هر کارنامه روی کارت مربوطه کلیک کنید.
-                </p>
+                    <p>
+                        برای مشاهده هر کارنامه روی کارت مربوطه کلیک کنید.
+                    </p>
+                </div>
 
-            </div>
+            </section>
 
 
-            <!-- =================================================
-                 CARDS
-                 ================================================= -->
 
-            <div
+            <!-- =====================================================
+                 DOCUMENT CARDS
+                 ===================================================== -->
+
+            <section
                 id="cards-container"
                 class="cards-container"
             >
@@ -123,29 +122,234 @@
 
                 </div>
 
-            </div>
+            </section>
 
 
         </div>
 
-
     </main>
 
 
-    <!-- SUPABASE -->
+
+    <!-- =========================================================
+         CHANGE PASSWORD MODAL
+         ========================================================= -->
+
+    <div
+        id="password-modal"
+        class="modal-overlay"
+        hidden
+    >
+
+        <div
+            class="modal-card password-modal-card"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="password-modal-title"
+        >
+
+
+            <!-- Modal header -->
+
+            <div class="modal-header">
+
+                <div class="modal-title-area">
+
+                    <div class="modal-icon">
+                        🔐
+                    </div>
+
+                    <div>
+
+                        <h2 id="password-modal-title">
+                            تغییر رمز عبور
+                        </h2>
+
+                        <p>
+                            رمز عبور جدید حساب خود را وارد کنید.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    id="password-modal-close"
+                    class="modal-close-button"
+                    aria-label="بستن"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+
+            <!-- Password form -->
+
+            <form
+                id="change-password-form"
+                class="password-form"
+            >
+
+
+                <!-- New password -->
+
+                <div class="form-group">
+
+                    <label for="new-password">
+                        رمز عبور جدید
+                    </label>
+
+
+                    <div class="password-input-wrapper">
+
+                        <input
+                            type="password"
+                            id="new-password"
+                            name="new-password"
+                            autocomplete="new-password"
+                            placeholder="رمز عبور جدید را وارد کنید"
+                            minlength="6"
+                            dir="ltr"
+                            required
+                        >
+
+
+                        <button
+                            type="button"
+                            class="password-toggle"
+                            id="toggle-new-password"
+                            aria-label="نمایش رمز عبور"
+                        >
+                            👁
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Confirm password -->
+
+                <div class="form-group">
+
+                    <label for="confirm-password">
+                        تکرار رمز عبور جدید
+                    </label>
+
+
+                    <div class="password-input-wrapper">
+
+                        <input
+                            type="password"
+                            id="confirm-password"
+                            name="confirm-password"
+                            autocomplete="new-password"
+                            placeholder="رمز عبور جدید را دوباره وارد کنید"
+                            minlength="6"
+                            dir="ltr"
+                            required
+                        >
+
+
+                        <button
+                            type="button"
+                            class="password-toggle"
+                            id="toggle-confirm-password"
+                            aria-label="نمایش رمز عبور"
+                        >
+                            👁
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Password requirements -->
+
+                <div class="password-info">
+
+                    <span class="password-info-icon">
+                        ℹ
+                    </span>
+
+                    <span>
+                        رمز عبور باید حداقل ۶ کاراکتر داشته باشد.
+                    </span>
+
+                </div>
+
+
+
+                <!-- Error -->
+
+                <div
+                    id="password-error"
+                    class="form-message error-message"
+                    hidden
+                ></div>
+
+
+
+                <!-- Success -->
+
+                <div
+                    id="password-success"
+                    class="form-message success-message"
+                    hidden
+                ></div>
+
+
+
+                <!-- Buttons -->
+
+                <div class="modal-actions">
+
+                    <button
+                        type="button"
+                        id="cancel-password-button"
+                        class="modal-cancel-button"
+                    >
+                        انصراف
+                    </button>
+
+
+                    <button
+                        type="submit"
+                        id="save-password-button"
+                        class="modal-save-button"
+                    >
+                        <span>
+                            ذخیره رمز عبور جدید
+                        </span>
+                    </button>
+
+                </div>
+
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================================================
+         JAVASCRIPT
+         ========================================================= -->
 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-
-    <!-- CONFIG -->
-
     <script src="config.js"></script>
 
-
-    <!-- DASHBOARD JAVASCRIPT -->
-
     <script src="dashboard.js"></script>
-
 
 </body>
 
